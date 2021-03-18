@@ -1,6 +1,12 @@
 # belanja_js6
 
-A new Flutter project.
+Halaman Home
+
+![plot](./images/ss1.PNG)
+
+Halaman Item
+
+![plot](./images/ss2.PNG)
 
 ## Getting Started
 
