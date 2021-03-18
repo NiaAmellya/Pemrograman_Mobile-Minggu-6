@@ -6,12 +6,31 @@ class ItemPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Item itemArgs = ModalRoute.of(context).settings.arguments;
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Shopping List"),
+      appBar: AppBar(
+        backgroundColor: Colors.purple[200],
+        title: Text("Toko Sepatu"),
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: DataTable(
+          columns: <DataColumn>[
+            DataColumn(label: Text("Merk")),
+            DataColumn(label: Text("Harga")),
+            DataColumn(label: Text("Warna")),
+            DataColumn(label: Text("Ukuran")),
+          ],
+          rows: <DataRow>[
+            DataRow(
+              cells: <DataCell>[
+                DataCell(Text(itemArgs.merk)),
+                DataCell(Text(itemArgs.price.toString())),
+                DataCell(Text(itemArgs.warna)),
+                DataCell(Text(itemArgs.ukuran)),
+              ],
+            ),
+          ],
         ),
-        body: Container(
-          alignment: Alignment.center,
-          child: Text(itemArgs.name + " ; " + itemArgs.price.toString()),
-        ));
+      ),
+    );
   }
 }
